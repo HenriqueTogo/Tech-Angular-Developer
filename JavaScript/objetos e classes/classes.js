@@ -13,7 +13,6 @@ class Pessoa {
 }
 
 const henrique = new Pessoa('Henrique', 22);
-
 const humberto = new Pessoa('Humberto', 42);
 
 henrique.getInfo();
