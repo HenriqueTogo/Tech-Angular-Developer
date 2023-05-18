@@ -7,7 +7,7 @@ let offset = 0;
 
 function convertPokemonToLi(pokemon) {
     return `
-        <li class="pokemon ${pokemon.type}">
+        <li class="pokemon ${pokemon.type}" onClick="getPokemonAttributes(${pokemon.number})">
             <span class="number">#${pokemon.number}</span>
             <span class="name">${pokemon.name}</span>
 
@@ -28,6 +28,10 @@ function loadPokemonItens(offset, limit) {
         const newHtml = pokemons.map(convertPokemonToLi).join('')
         pokemonList.innerHTML += newHtml
     })
+}
+
+function getPokemonAttributes(number) {
+    pokeApi.getPokemonAttributes(number);
 }
 
 loadPokemonItens(offset, limit)
