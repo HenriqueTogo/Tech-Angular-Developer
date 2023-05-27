@@ -20,6 +20,11 @@ export class QuizComponent implements OnInit{
       const finalAnswer: string = await this.checkResult(this.answers);
       this.finished = true;
       this.answerSelected = quiz_questions.results[finalAnswer as keyof typeof quiz_questions.results]
+      if (finalAnswer === 'A') {
+        this.isHero = false;
+      } else if (finalAnswer === 'B') {
+        this.isHero = true;
+      }
     }
   }
 
@@ -46,6 +51,7 @@ export class QuizComponent implements OnInit{
   questionIndex: number = 0;
   questionMaxIndex: number = 0;
   finished: boolean = false;
+  isHero: boolean = false;
   
 constructor() { }
 
